@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yummy</title>
+  <link rel="shortcut icon" href="../image/imgae1.png" type="image/x-icon">
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- <link href="./output.css" rel="stylesheet"> -->
   <script
@@ -11,17 +13,15 @@
    ></script>
 </head>
 <body class="bg-black ">
-
-        <section class=" w-{25%} relative ">
-            <nav class="h-lvh flex justify-start sildeClose absolute top-0 start-0 bottom-0 end-0 z-50">
+            <nav class="h-lvh flex justify-start sildeClose fixed top-0  bottom-0  z-50">
             <div class="h-full w-64 bg-black flex flex-wrap flex-col justify-between overflow-hidden navsilde ">
                 <div class="overflow-hidden">
                     <div class="text-white w-full ps-8 flex flex-wrap my-5 mx-auto flex-col gap-y-4 overflow-hidden animat ">
-                        <a href="" id="Search" class="relative">Search</a>
-                        <a href="" id="Categories" class="relative">Categories</a>
-                        <a href="" id="Area" class="relative">Area</a>
-                        <a href="" id="Ingredients" class="relative">Ingredients</a>
-                        <a href="" id="Contact" class="relative">Contact Us</a>
+                        <a href="#divSearch" id="Search" >Search</a>
+                        <a href="#divCategory" id="Categories" >Categories</a>
+                        <a href="#divAreaDet" id="Area" >Area</a>
+                        <a href="#divIng" id="Ingredients" >Ingredients</a>
+                        <a href="#contact_us" id="Contact" >Contact Us</a>
                     </div>
                 </div>
                 <div class="text-white ps-8 my-5">
@@ -47,25 +47,146 @@
                 </div>
             </div>
          </nav>
-        </section>
         <section class="ms-32">
-            <div class="container w-{75%} grid grid-cols-4 gap-2  pt-20 overflow-hidden group">
-                <div class="rounded-md relative col-4">
-                    <div class=" ">
-                        <div>
-                            <img src="../image/imgae1.jpg" alt="" class="w-{100%} rounded-md">
-                        </div>
-                    </div>
-                    <div class="layer bg-white bg-opacity-50 absolute top-0 bottom-0 start-0 end-0 flex items-center translate-y-6 group-hover:-translate-y-6">
-                        <h3 class="font-bold text-3xl group-hover:text-white">Corba</h3>
-                    </div>
+            <div class="container food_Categories  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-6 pt-20 " id="food">
+            </div>
+            <div class="flex details hidden" id="details">
+            </div>
+            <div class="search hidden" id="divSearch">
+                <div class="flex justify-center items-center gap-x-5 w-[70%] pb-5 mt-5 m-auto">
+                    <input type="text" id="byNameS" class="text-white border py-2 px-6 rounded-md bg-transparent w-[50%] focus:outline-none focus:ring focus:ring-blue-900 duration-500" placeholder="Search By name">
+                    <input type="text" id="byLetterS" class="text-white border py-2 px-6 rounded-md bg-transparent w-[50%] focus:outline-none focus:ring focus:ring-blue-900 duration-500" placeholder="Search By First Letter">
+                </div>
+                <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-16 " id="displaySer">
                 </div>
             </div>
-            <div class="w-40 h-40 bg-white group">
-                <h3 class="font-bold text-xl hover:text-red-800">Corba</h3>
+            <div class="container food_Categories  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-20 hidden " id="divCategory">
+            </div>
+            <div class="container food_Categories  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4gap-6 pt-20 hidden " id="divCategoryDet">
+            </div>
+            <div class="container food_Categories  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4gap-6 pt-20 hidden " id="divAreaDet">
+            </div>
+            <div class="container food_Categories  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-20 hidden " id="divArea" >
+            </div>
+            <div class="container food_Categories  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4gap-6 pt-20 hidden " id="divIng" >
+            </div>
+            <div class="container food_Categories  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-20 hidden " id="divIngDet" >
+            </div>   
+            <div aria-label="Loading..." id="Loading" role="status" class="flex items-center fixed top-0 bottom-0 left-0 right-0 z-50  translate-x-[45%] translate-y-[10%] hidden space-x-2">
+                <svg class="h-20 w-20 animate-spin stroke-red-500" viewBox="0 0 256 256">
+                    <line x1="128" y1="32" x2="128" y2="64" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
+                    <line x1="195.9" y1="60.1" x2="173.3" y2="82.7" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="24"></line>
+                    <line x1="224" y1="128" x2="192" y2="128" stroke-linecap="round" stroke-linejoin="round" stroke-width="24">
+                    </line>
+                    <line x1="195.9" y1="195.9" x2="173.3" y2="173.3" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="24"></line>
+                    <line x1="128" y1="224" x2="128" y2="192" stroke-linecap="round" stroke-linejoin="round" stroke-width="24">
+                    </line>
+                    <line x1="60.1" y1="195.9" x2="82.7" y2="173.3" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="24"></line>
+                    <line x1="32" y1="128" x2="64" y2="128" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
+                    <line x1="60.1" y1="60.1" x2="82.7" y2="82.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="24">
+                    </line>
+                </svg>
+                <span class="text-4xl font-medium text-gray-500">Loading...</span>
             </div>
         </section>
-
+        <section class="contact-us hidden w-[70%] mx-auto" id="contact_us">
+            <div class="grid grid-cols-2  place-content-center translate-y-72">
+              <div class="md:me-16  md:mb-16">
+                <input
+                  onkeyup="inputsValidation()"
+                  class="name-input rounded-md w-[80%] pt-2 pb-2 ps-2 ms-28"
+                  type="text"
+                  placeholder="Enter Your Name"
+                />
+                <div
+                  id="nameAlert"
+                  class="bg-red-600 text-white w-[80%] mt-2 p-3 rounded-lg hidden ms-auto"
+                >
+                  Special characters and numbers not allowed
+                </div>
+              </div>
+              <div class="me-16 mb-16">
+                <input
+                  onkeyup="inputsValidation()"
+                  class="email-input rounded-md w-[80%] pt-2 pb-2 ps-2 me-auto"
+                  type="email"
+                  placeholder="Enter Your Email"
+                />
+                <div
+                  id="emailAlert"
+                  class="bg-red-600 text-white w-[80%] mt-2 p-3 rounded-lg hidden me-auto"
+                >
+                  Email not valid *exemple@yyy.zzz
+                </div>
+              </div>
+              <div class="me-16 mb-16">
+                <input
+                  onkeyup="inputsValidation()"
+                  class="phone-input rounded-md w-[80%] pt-2 pb-2 ps-2 ms-28"
+                  type="number"
+                  placeholder="Enter Your Phone"
+                />
+                <div
+                  id="phoneAlert"
+                  class="bg-red-600 text-white w-[80%] mt-2 p-3 rounded-lg hidden ms-auto"
+                >
+                  Enter valid Phone Number
+                </div>
+              </div>
+              <div class="me-16 mb-16">
+                <input
+                  onkeyup="inputsValidation()"
+                  class="age-input rounded-md w-[80%] pt-2 pb-2 ps-2 me-auto"
+                  type="number"
+                  placeholder="Enter Your Age"
+                />
+                <div
+                  id="ageAlert"
+                  class="bg-red-600 text-white w-[80%] mt-2 p-3 rounded-lg hidden me-auto"
+                >
+                  Enter valid age
+                </div>
+              </div>
+              <div class="me-16 mb-16">
+                <input
+                  onkeyup="inputsValidation()"
+                  class="password-input rounded-md w-[80%] pt-2 pb-2 ps-2 ms-28"
+                  type="password"
+                  placeholder="Enter Your Password"
+                />
+                <div
+                  id="passwordAlert"
+                  class="bg-red-600 text-white w-[80%] mt-2 p-3 rounded-lg hidden ms-auto"
+                >
+                  Enter valid password *Minimum eight characters, at least one letter
+                  and one number:*
+                </div>
+              </div>
+              <div class="me-16 mb-16">
+                <input
+                  onkeyup="inputsValidation()"
+                  class="repassword-input rounded-md w-[80%] pt-2 pb-2 ps-2 me-auto"
+                  type="password"
+                  placeholder="Enter Your Repassword"
+                />
+                <div
+                  id="repasswordAlert"
+                  class="bg-red-600 text-white w-[80%] mt-2 p-3 rounded-lg hidden me-auto"
+                >
+                  Enter valid repassword
+                </div>
+              </div>
+            </div>
+            <button
+              disabled="true"
+              class="submit-btn border pt-2 pb-2 ps-4 pe-4 border-red-700 bg-black text-red-700 rounded-lg ms-[29rem] translate-y-[15rem]"
+            >
+              Submit
+            </button>
+          </section>
   <script src="./jquery-3.7.1.min.js"></script>
   <script src="./main.js"></script>
 </body>
